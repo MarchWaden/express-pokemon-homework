@@ -1,6 +1,6 @@
 const chai = require('chai');
 const supertest = require('supertest');
-const app = require('../server');
+const app = require('../index.js');
 const should = chai.should()
 const cheerio = require('cheerio');
 
