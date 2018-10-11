@@ -8,7 +8,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
 app.get('/pokemon', (req, res) => {
-  res.send(Pokemon)
+  const context = {
+    pokemon: Pokemon
+  }
+  res.render('index.ejs',context)
 });
 
 app.listen(3000, () => {
