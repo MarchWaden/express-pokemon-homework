@@ -6,6 +6,7 @@ const Pokemon = require('./model/pokemon.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
+app.use(express.static('static'));
 
 app.get('/pokemon/:index', (req,res) => {
   const context = {
