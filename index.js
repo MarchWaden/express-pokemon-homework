@@ -7,6 +7,12 @@ const Pokemon = require('./model/pokemon.js');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
+app.get('/pokemon/:index', (req,res) => {
+  const context = {
+  pokemon:  Pokemon[req.params.index]
+  }
+  res.render('show.ejs',context);
+});
 app.get('/pokemon', (req, res) => {
   const context = {
     pokemon: Pokemon
